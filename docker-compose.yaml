@@ -1,0 +1,11 @@
+version: '2.0'
+
+services:
+  uploader:
+    container_name: physics-file-uploader
+    restart: always
+    build: .
+    volumes:
+      - /root/files:/var/www/html/files
+    ports:
+      - "3222:80"

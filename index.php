@@ -15,12 +15,13 @@
 <?PHP
   if(!empty($_FILES['uploaded_file']))
   {
-    $path = "/data/uploads/";
+    $path = "/var/www/html/files/";
     $path = $path . basename( $_FILES['uploaded_file']['name']);
+    $base = "https://os.mipt.ru/upload/files/";
 
     if(move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $path)) {
-      echo "Файл ".  basename( $_FILES['uploaded_file']['name']).
-      " был загружен. Ссылка на файл: https://os.mipt.ru/files/" . basename( $_FILES['uploaded_file']['name']) ;
+      $url =  $base . basename( $_FILES['uploaded_file']['name']);
+      echo "<h3><a target='_blank' href='" .  $url . "' >" . $url . "</a></h3>" ;
     } else{
         echo "There was an error uploading the file, please try again!";
     }
