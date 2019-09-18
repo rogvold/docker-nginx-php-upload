@@ -24,7 +24,7 @@ $ext = pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION);
 
 $target_file_name = randomString() . "." . $ext;
 
-$target_file = dirname( __FILE__ ) . $ds . $storeFolder . $ds . $target_file_name;
+$target_file = $storeFolder . '/' . $target_file_name;
 
 
     $tempFile = $_FILES['file']['tmp_name'];          //3
