@@ -9,5 +9,7 @@ RUN mkdir -p /var/www/html/conf/nginx/ /var/www/html/scripts /var/www/html/files
 #RUN ln -s /data /var/www/html/files
 COPY nginx.conf /var/www/html/conf/nginx/
 COPY index.php /var/www/html/
+COPY upload.php /var/www/html/
+COPY cors.php /var/www/html/
 COPY upload_dir.sh /var/www/html/scripts/
 COPY hello.html /var/www/html/files/

@@ -1,8 +1,8 @@
-<?php
+<?PHP
 
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST');
-header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Key, Cache-Control");
+#header('Access-Control-Allow-Origin: *', true);
+#header('Access-Control-Allow-Methods: GET, POST', true);
+#header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Key, Cache-Control', true);
 
 
 function randomString($length = 20) {
@@ -14,8 +14,7 @@ function randomString($length = 20) {
     return $randomString;
 }
 
-
-$ds          = DIRECTORY_SEPARATOR;  //1
+$ds = DIRECTORY_SEPARATOR;  //1
 
 $storeFolder = '/var/www/html/files';   //2
 
@@ -36,10 +35,7 @@ $target_file = dirname( __FILE__ ) . $ds . $storeFolder . $ds . $target_file_nam
 
 $result =  move_uploaded_file($tempFile, $target_file); //6
 
-
-if ($result) {
 echo $target_file_name;
-}
 
 }
 ?>
